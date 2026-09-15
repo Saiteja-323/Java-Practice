@@ -1,0 +1,24 @@
+package ArraysDSA_Problems;
+import java.util.*;
+public class PairSum {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		int[] arr = new int[n];
+		for(int i=0;i<n;i++) arr[i]=sc.nextInt();
+		int tar = sc.nextInt();
+		List<List<Integer>> pairs = new ArrayList<>();
+		for(int i=0;i<n;i++) {
+			for(int j=i+1;j<n;j++) {
+				List<Integer> pair = new ArrayList<>();
+				if(arr[i]+arr[j]==tar) {
+					pair.add(arr[i]);
+					pair.add(arr[j]);
+					pairs.add(pair);
+				}
+			}
+		}
+		System.out.println(pairs);
+		sc.close();
+	}
+}
